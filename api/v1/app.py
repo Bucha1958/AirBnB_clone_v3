@@ -11,6 +11,9 @@ app.register_blueprint(app_views)
 
 @app.teardown_appcontext
 def teardown_appcontext(exception=None):
+    """
+        Teardown method for storage session
+    """
     storage.close()
 
 if __name__ == "__main__":
