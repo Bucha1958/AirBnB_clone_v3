@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""file that contains error handler and others"""
 from flask import Flask, jsonify
 from models import storage
 from api.v1.views import app_views
@@ -13,6 +14,7 @@ app.register_blueprint(app_views)
 @app.errorhandler(404)
 def handle_404(error):
     """custom JSON 404 error"""
+
     return jsonify({"error": "Not found"}), 404
 
 
